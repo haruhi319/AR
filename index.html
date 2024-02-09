@@ -24,15 +24,15 @@
     const models = [
       {
         url: "https://my.spline.design/untitled-4e4558ca34d909116aba0dd42023637a/",
-        scale: ['5.0', '5.0', '5.0'],
+        scale: ['2.0', '2.0', '2.0'],
       },
     ];
 
     const createEntity = ({ location: { latitude, longitude }, model, scale: [x, y, z] }) => {
       const $entity = document.createRange().createContextualFragment(`
         <a-entity
-          gltf-model="https://my.spline.design/untitled-4e4558ca34d909116aba0dd42023637a/"
-          scale="2 2 2"
+          gltf-model="${model}"
+          scale="${x} ${y} ${z}"
           gps-entity-place="latitude: ${latitude}; longitude: ${longitude};"
         ></a-entity>
       `);
